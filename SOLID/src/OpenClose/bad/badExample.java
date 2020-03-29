@@ -2,17 +2,17 @@ package OpenClose.bad;
 
 public class badExample {
     public static void main(String[] args) {
-        fighter fp = new fighter(1000, "Mamba");
+        Fighter fp = new Fighter(1000, "Mamba");
         fp.getInfo();
         System.out.println();
-        drone dp = new drone(500, "Bermuda Triangle");
+        Drone dp = new Drone(500, "Bermuda Triangle");
         dp.getInfo();
     }
 }
 //若是不用extend的方法去做，則會讓move, gas, planID重複了好幾遍
 //這樣會讓code變得很冗長且不精簡
-class fighter {
-    fighter(int gas, String name){
+class Fighter {
+    Fighter(int gas, String name){
         this.gas = gas;
         this.planeID = name;
     }
@@ -44,8 +44,8 @@ class fighter {
     private final int grenade = 10;
 
 }
-class drone {
-    drone(int gas, String name){
+class Drone {
+    Drone(int gas, String name){
         this.gas = gas;
         this.planeID = name;
     }

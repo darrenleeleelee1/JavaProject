@@ -1,14 +1,16 @@
+package OpenClose.good;
+
 public class goodExample {
     public static void main(String[] args) {
-        fighter fp = new fighter(1000, "Mamba");
+        Fighter fp = new Fighter(1000, "Mamba");
         fp.getInfo();
         System.out.println();
-        drone dp = new drone(500, "Bermuda Triangle");
+        Drone dp = new Drone(500, "Bermuda Triangle");
         dp.getInfo();
     }
 }
-//開放延伸的同時，應該要把護父類別的資料，不能輕易被更改(不能直接更改父類別裡的function)
-class plane{
+
+class Plane{
     public void getInfo(){
         System.out.println("I am " + getPlaneID());
         System.out.println("Maximum gas: " + getGas());
@@ -20,22 +22,23 @@ class plane{
         else if(flag == 4) System.out.println("right");
     }
     private int gas = 10;
-    private String planeID;
+    private String PlaneID;
     public void setGas(int gas){
         this.gas = gas;
     }
     public void setPlaneID(String name){
-        this.planeID = name;
+        this.PlaneID = name;
     }
     public int getGas(){
         return gas;
     }
     public String getPlaneID(){
-        return planeID;
+        return PlaneID;
     }
 }
-class fighter extends plane{
-    fighter(int gas, String name){
+
+class Fighter extends Plane{
+    Fighter(int gas, String name){
         setGas(gas);
         setPlaneID(name);
     }
@@ -59,8 +62,9 @@ class fighter extends plane{
     private final int grenade = 10;
 
 }
-class drone extends plane{
-    drone(int gas, String name){
+
+class Drone extends Plane{
+    Drone(int gas, String name){
         setGas(gas);
         setPlaneID(name);
     }

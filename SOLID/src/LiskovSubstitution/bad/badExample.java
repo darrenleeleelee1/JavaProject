@@ -2,7 +2,6 @@ package LiskovSubstitution.bad;
 
 public class badExample{
     public static void main(String[] args){
-        //it is more clear that which button is called
         Airplane ap = new Airplane();
         ap.button();
         System.out.println();

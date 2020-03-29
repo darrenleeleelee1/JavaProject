@@ -1,13 +1,13 @@
 package DependencyInversion.good;
 public class goodExample {
     public static void main(String[] args) {
-        airplane ap = new airplane();
-        ap.siren(new fighter());
-        ap.siren(new drone());
-        ap.siren(new airliner());
+        Airplane ap = new Airplane();
+        ap.siren(new Fighter());
+        ap.siren(new Drone());
+        ap.siren(new Airliner());
     }
 }
-class airplane{
+class Airplane{
     public void siren(Sound sound){
         System.out.println(sound.getSiren());
     }
@@ -15,19 +15,19 @@ class airplane{
 interface Sound{
     public String getSiren();
 }
-class fighter implements Sound{
+class Fighter implements Sound{
     @Override
     public String getSiren() {
         return "Da Da Da Da!";
     }
 }
-class drone implements Sound{
+class Drone implements Sound{
     @Override
     public String getSiren() {
         return "Hong Hong Hong~";
     }
 }
-class airliner implements Sound{
+class Airliner implements Sound{
     @Override
     public String getSiren() {
         return "__________";

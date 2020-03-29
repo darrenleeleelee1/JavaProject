@@ -2,34 +2,34 @@ package DependencyInversion.bad;
 //siren 飛機的轟鳴聲
 public class badExample {
     public static void main(String[] args) {
-        airplane ap = new airplane();
-        ap.siren(new fighter());
-        ap.siren(new drone());
-        ap.siren(new airliner());
+        Airplane ap = new Airplane();
+        ap.siren(new Fighter());
+        ap.siren(new Drone());
+        ap.siren(new Airliner());
     }
 }
-class airplane{
-    public void siren(fighter sound){
+class Airplane{
+    public void siren(Fighter sound){
         System.out.println(sound.getSiren());
     }
-    public void siren(drone sound){
+    public void siren(Drone sound){
         System.out.println(sound.getSiren());
     }
-    public void siren(airliner sound){
+    public void siren(Airliner sound){
         System.out.println(sound.getSiren());
     }
 }
-class fighter{
+class Fighter{
     public String getSiren() {
         return "Da Da Da Da!";
     }
 }
-class drone{
+class Drone{
     public String getSiren() {
         return "Hong Hong Hong~";
     }
 }
-class airliner{
+class Airliner{
     public String getSiren() {
         return "__";
     }

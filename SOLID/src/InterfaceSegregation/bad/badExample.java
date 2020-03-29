@@ -2,24 +2,24 @@ package InterfaceSegregation.bad;
 //不符合interface segregatio
 public class badExample {
     public static void main(String[] args){
-        airplane ap = new airplane();
-        ap.action(new drone());
-        ap.action(new fighter());
+        Airplane ap = new Airplane();
+        ap.action(new Drone());
+        ap.action(new Fighter());
     }
 }
-class airplane{
-    public void action(tool a1){
+class Airplane{
+    public void action(Tool a1){
         a1.manned();
         a1.fly();
         a1.engine();
     }
 }
-interface tool{
+interface Tool{
     void manned();
     void fly();
     void engine();
 }
-class drone implements tool{
+class Drone implements Tool{
     public void manned(){
         System.out.println("Drone can carry people.");
     }
@@ -30,7 +30,7 @@ class drone implements tool{
         System.out.println("Drone have engine.");
     }
 }
-class fighter implements tool{
+class Fighter implements Tool{
     public void manned(){
         System.out.println("Fighter can carry people.");
     }
