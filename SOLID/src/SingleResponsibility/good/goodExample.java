@@ -2,35 +2,25 @@ package SingleResponsibility.good;
 
 public class goodExample {
     public static void main(String[] args) {
-        Manned manned = new Manned();
-        manned.fly("I am airliner");
-
-        Detect detect = new Detect();
-        detect.fly("I am drone");
-
-        Fighter fighter = new Fighter();
-        fighter.fly("I am fighter");
-    }
-
-
-}
-
-class Manned{
-    public void fly(String airplane) {
-        System.out.println(airplane + "can carry people");
+        drone plane1 = new drone(100, "COVID-18");
+        fighter plane2 = new fighter(1000, 9999, "SARS-CoV5");
     }
 }
-
-class Detect{
-    public void fly(String airplane) {
-        System.out.println(airplane + "can detect enemy");
+class drone {
+    private int gas;
+    private String droneID;
+    drone(int gas, String ID){
+        this.droneID = ID;
+        this.gas = gas;
     }
-
 }
-
-class Fighter{
-    public void fly(String airplane) {
-        System.out.println(airplane + "can fight");
+class fighter {
+    private int gas;
+    private int load;
+    private String fighterID;
+    fighter(int gas, int load, String name){
+        this.fighterID = name;
+        this.gas = gas;
+        this.load = load;
     }
-
 }

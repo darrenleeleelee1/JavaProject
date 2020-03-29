@@ -1,7 +1,5 @@
-//不符合interface segregation
 package InterfaceSegregation.bad;
-import java.util.*;
-
+//不符合interface segregatio
 public class badExample {
     public static void main(String[] args){
         airplane ap = new airplane();
