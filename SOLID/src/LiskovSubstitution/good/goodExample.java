@@ -2,64 +2,36 @@ package LiskovSubstitution.good;
 
 public class goodExample{
     public static void main(String[] args){
-        Airplane a = new Airplane();
-        Fighter f = new Fighter();
-        Drone d = new Drone();
-        a.fly();
-        a.engine();
-        a.manned();
-
-        f.fly();
-        f.engine();
-        f.manned();
-        f.fight();
-
-        d.fly();
-        d.engine();
-        d.manned();
+        //it is more clear that which button is called
+        Airplane ap = new Airplane();
+        ap.button();
+        System.out.println();
+        ap = new Fighter();
+        ap.button();
+        System.out.println();
+        ap = new Drone();
+        ap.button();
     }
 }
-class Airplane  {
-    public void fly() {
-        System.out.println("can fly");
+class Airplane {
+    public void button(){
+        System.out.println("Button was pressed, \n" +
+                            "the emergency exit door will open in five seconds.");
     }
-    public void engine() {
-        System.out.println("have engine");
-    }
-    public void manned() {
-        System.out.println("can carry people");
-    }
-
 }
 
 class Fighter extends Airplane {
-
-    public void fly() {
-        System.out.println("can fly");
+    @Override
+    public void button(){
+        System.out.println("Button was pressed, \n" +
+                            "you can drop the bomb");
     }
-    public void engine() {
-        System.out.println("have engine");
-    }
-    public void manned() {
-        System.out.println("can carry people");
-    }
-    public void fight() {
-        System.out.println("can fight");
-    }
-
 }
 
 class Drone extends Airplane {
-
-    public void fly() {
-        System.out.println("can fly");
-    }
-    public void engine() {
-        System.out.println("have engine");
-    }
     @Override
-    public void manned() {
-        System.out.println("no need to drive");
+    public void button(){
+        System.out.println("Button was pressed, \n" +
+                            "the drone is going to self-explosion");
     }
-
 }
