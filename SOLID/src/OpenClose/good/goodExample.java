@@ -7,13 +7,14 @@ public class goodExample {
         dp.getInfo();
     }
 }
+//開放延伸的同時，應該要把護父類別的資料，不能輕易被更改(不能直接更改父類別裡的function)
 class plane{
     public void getInfo(){
         System.out.println("I am " + getPlaneID());
         System.out.println("Maximum gas: " + getGas());
     }
     public void move(int flag) {
-        if(flag == 1) System.out.println("forword");
+        if(flag == 1) System.out.println("forward");
         else if(flag == 2) System.out.println("back");
         else if(flag == 3) System.out.println("left");
         else if(flag == 4) System.out.println("right");
