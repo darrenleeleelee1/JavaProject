@@ -1,37 +1,79 @@
 package LiskovSubstitution.good;
 
-public class goodExample{
-    public static void main(String[] args){
-        //it is more clear that which button is called
-        Airplane ap = new Airplane();
-        ap.button();
-        System.out.println();
-        ap = new Fighter();
-        ap.button();
-        System.out.println();
-        ap = new Drone();
-        ap.button();
-    }
-}
-class Airplane {
-    public void button(){
-        System.out.println("Button was pressed, \n" +
-                            "the emergency exit door will open in five seconds.");
-    }
+import java.util.*;
+public class goodExample {
+
+	public static void main(String[] args){
+
+		Airplane a = new Airplane();
+		Fighter f = new Fighter();
+		Drone d = new Drone();
+
+		System.out.println("Airplane:");
+		a.fly();
+		a.engine();
+		a.manned();
+		System.out.println();
+
+		System.out.println("Fighter:");	
+		f.fly();
+		f.engine();
+		f.manned();
+		f.fight();
+		System.out.println();
+
+		System.out.println("Drone:");
+		d.fly();
+		d.engine();
+		d.manned();
+
+	}
+
 }
 
-class Fighter extends Airplane {
-    @Override
-    public void button(){
-        System.out.println("Button was pressed, \n" +
-                            "you can drop the bomb");
-    }
+class Base {
+
+	public void fly() {
+		System.out.println("can fly");
+	}
+	public void engine() {
+		System.out.println("have engine");
+	}
 }
 
-class Drone extends Airplane {
-    @Override
-    public void button(){
-        System.out.println("Button was pressed, \n" +
-                            "the drone is going to self-explosion");
-    }
+interface Plane {
+
+	public abstract void manned();
+
 }
+
+class Airplane extends Base implements Plane {
+	@Override
+	public void manned() {
+		System.out.println("can carry people");
+	}
+
+}
+
+class Fighter extends Base implements Plane {
+	@Override
+	public void manned() {
+		System.out.println("can carry people");
+	}
+
+	public void fight() {
+		System.out.println("can fight");
+	}
+
+}
+
+class Drone extends Base implements Plane {
+	@Override
+	public void manned() {
+		System.out.println("can't carry people");
+	}
+
+}
+	
+	
+
